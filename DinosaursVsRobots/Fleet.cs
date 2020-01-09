@@ -18,6 +18,7 @@ namespace DinosaursVsRobots
         public Fleet()
         {
             robots = new List<Robot>();
+            // instantiate robot classes when Fleet is instantiated
             robots.Add(new Robot("Tiny", 100, 50, 25));
             robots.Add(new Robot("Normal", 200, 75, 50));
             robots.Add(new Robot("Big", 300, 25, 75));

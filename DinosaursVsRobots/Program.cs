@@ -12,6 +12,7 @@ namespace DinosaursVsRobots
         {
             Simulation sim = new Simulation();
 
+            // run story game
             sim.RunSim();
             Console.ReadLine();
 

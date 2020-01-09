@@ -15,6 +15,7 @@ namespace DinosaursVsRobots
         // constructor (SPAWNER)
         public Battlefield()
         {
+            // instantiate the overall "armies" for each side
             herd = new Herd();
             fleet = new Fleet();
         }

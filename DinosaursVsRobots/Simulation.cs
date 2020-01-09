@@ -20,6 +20,7 @@ namespace DinosaursVsRobots
         // member methods (CAN DO)
         public void RunSim()
         {
+            // give user some background on the game story
             Console.WriteLine("Welcome to Dinosaurs vs Robots!");
             Console.WriteLine("Dinosaurs have come back to life and are threatenting human existence.");
             Console.WriteLine("The greatest minds have assembled and created the world's top line defense against these dinosaurs.");
@@ -29,6 +30,7 @@ namespace DinosaursVsRobots
 
         public void ChooseRobot()
         {
+            // have user select their first robot to battle
             Console.WriteLine("Choose Your Robot: Tiny, Normal, Big");
             string userInput = Console.ReadLine();
             switch (userInput)
@@ -47,6 +49,7 @@ namespace DinosaursVsRobots
         }
         public void MistypedChoice()
         {
+            // keep track of failed entries and end program if too many attempts
             if (counter <= 3)
             {
                 counter += 1;
