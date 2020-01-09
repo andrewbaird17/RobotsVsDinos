@@ -41,11 +41,11 @@ namespace DinosaursVsRobots
                 case "Big":
                     break;
                 default:
-                    IdiotProofChoice();
+                    MistypedChoice();
                     break;
             }
         }
-        public void IdiotProofChoice()
+        public void MistypedChoice()
         {
             if (counter <= 3)
             {
