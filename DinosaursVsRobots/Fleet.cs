@@ -34,8 +34,25 @@ namespace DinosaursVsRobots
 
         public void ChooseRobot()
         {
+            List<string> names = new List<string>();
+            for (int i = 0; i < robots.Count; i++)
+            {
+                if (robots[i].health == 0)
+                {
+                    robots.RemoveAt(i);
+                }
+            }
+            for (int j = 0; j < robots.Count; j++)
+            {
+                names.Add(robots[j].name);
+            }
             // have user select their first robot to battle
-            Console.WriteLine("Choose Your Robot: Tiny, Normal, Big");
+            Console.WriteLine("Choose your robot: ");
+            for (int k = 0; k < names.Count; k++)
+            {
+                Console.Write(names[k] + ", ");
+            }
+
             string userInput = Console.ReadLine().ToLower();
             // clear console screen (reset the memory)
             Console.Clear();
@@ -43,7 +60,6 @@ namespace DinosaursVsRobots
             switch (userInput)
             {
                 case "tiny":
-                    CurrentFighter = robots[0];
                     break;
                 case "normal":
                     CurrentFighter = robots[1];
@@ -70,8 +86,6 @@ namespace DinosaursVsRobots
                 // Add in final game screen to end program
                 Console.WriteLine("You have failed humanity!\n Hit any key to EXIT");
             }
-
-            
         }
         
     }
