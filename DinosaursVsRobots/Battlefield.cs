@@ -38,15 +38,15 @@ namespace DinosaursVsRobots
         {
             // have user select their first robot to battle
             Console.WriteLine("Choose Your Robot: Tiny, Normal, Big");
-            string userInput = Console.ReadLine();
+            string userInput = Console.ReadLine().ToLower();
             switch (userInput)
             {
-                case "Tiny":
+                case "tiny":
 
                     break;
-                case "Normal":
+                case "normal":
                     break;
-                case "Big":
+                case "big":
                     break;
                 default:
                     MistypedChoice();
@@ -66,10 +66,10 @@ namespace DinosaursVsRobots
                 // Add in final game screen to end program
                 Console.WriteLine("You have failed humanity!\n Hit any key to EXIT");
             }
-            public void RunBattle()
-            {
+        }
+        public void RunBattle()
+        {
 
-            }
         }
     }
 }
