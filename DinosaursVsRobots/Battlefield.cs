@@ -41,16 +41,63 @@ namespace DinosaursVsRobots
 
             Console.WriteLine("Computer Chose: " + herd.CurrentDino.type);
             Console.WriteLine("Current Health: " + herd.CurrentDino.health);
-            Console.WriteLine("Current Energy: " + herd.CurrentDino.energy);
+            Console.WriteLine("Current Attack Power: " + herd.CurrentDino.attackPower);
             Console.WriteLine("");
 
             // Display User's Robot Choice: Name, Health, powerLevel
             Console.WriteLine("You Chose: " + fleet.CurrentFighter.name) ;
             Console.WriteLine("Current Health: " + fleet.CurrentFighter.health);
-            Console.WriteLine("Current Power Level: " + fleet.CurrentFighter.powerLevel);
+            Console.WriteLine("Current Attack Power: " + fleet.CurrentFighter.attackPower);
             Console.ReadLine();
 
         }
+
+        public void PlayerChoice()
+        {
+            Console.WriteLine(fleet.CurrentFighter.name + "attacks" + herd.CurrentDino.type);
+            // Console.WriteLine("Choose an option: Attack or Dodge")
+            string robotAttack = "Attack";
+            switch (robotAttack)
+            {
+                case "Attack":
+                    RoboAttackSequence();
+                    break;
+                default:
+                    Console.Clear();
+                    DisplayScreen();
+                    break;
+            }
+        }
+
+        public void ComputerChoice()
+        {
+            // Add in "Dodge" as an option later once basic game works
+            List<string> options = new List<string>() { "Attack" };
+            Random random = new Random();
+            int index = random.Next(options.Count);
+
+            string compinput = options[index].ToLower();
+            switch (compinput)
+            {
+                case "attack":
+                    DinoAttackSequence();
+                    break;
+                default:
+                    break;
+            }
+        }
+        public void DinoAttackSequence()
+        {
+            
+            
+        }
+
+        public void RoboAttackSequence()
+        {
+            
+
+        }
+
     }
 }
 
