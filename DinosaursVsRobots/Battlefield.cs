@@ -29,8 +29,11 @@ namespace DinosaursVsRobots
             Console.WriteLine("The greatest minds have assembled and created the world's top line defense against these dinosaurs.");
             Console.WriteLine("You have been chosen to run this team of robots and are humanity's last hope. Good Luck!");
             Console.ReadLine();
+            // user chooses a robot
             fleet.ChooseRobot();
+            // computer chooses a robot
             herd.ChooseDino();
+            // Display stats
             DisplayScreen();
         }
 
@@ -50,6 +53,7 @@ namespace DinosaursVsRobots
             Console.WriteLine("Current Attack Power: " + fleet.CurrentFighter.attackPower);
             Console.ReadLine();
 
+            // Inititate the Fight
             TurnSequence();
         }
 
@@ -92,15 +96,27 @@ namespace DinosaursVsRobots
 
         public void TurnSequence()
         {
-            do
+            if (fleet.CurrentFighter.health > 0 && herd.CurrentDino.health > 0)
             {
                 PlayerChoice();
                 ComputerChoice();
                 DisplayScreen();
                 Console.ReadLine();
                 Console.Clear();
-            } while (fleet.CurrentFighter.health > 0 && herd.CurrentDino.health > 0);
-
+            }
+            else if (fleet.CurrentFighter.health <= 0)
+            {
+                Console.WriteLine(fleet.CurrentFighter.name + " has zero health. \nChoose a new robot.");
+                fleet.ChooseRobot();
+                DisplayScreen();
+            }
+            else if (herd.CurrentDino.health <= 0) 
+            {
+                Console.WriteLine(herd.CurrentDino.type + " has zero health.");
+                herd.ChooseDino();
+                DisplayScreen();
+            }
+            
 
         }
         

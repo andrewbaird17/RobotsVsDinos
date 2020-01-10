@@ -39,6 +39,7 @@ namespace DinosaursVsRobots
             string userInput = Console.ReadLine().ToLower();
             // clear console screen (reset the memory)
             Console.Clear();
+
             switch (userInput)
             {
                 case "tiny":
