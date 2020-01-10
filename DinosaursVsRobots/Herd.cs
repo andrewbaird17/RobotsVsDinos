@@ -16,6 +16,7 @@ namespace DinosaursVsRobots
         //public Dinosaur large;
 
         public List<Dinosaur> dinosaurs;
+        public Dinosaur CurrentDino;
         // constructor (SPAWNER)
         public Herd()
         {
@@ -26,6 +27,26 @@ namespace DinosaursVsRobots
             dinosaurs.Add(new Dinosaur("Largeie", 300, 30, 75));
         }
         // member methods (CAN DO)
+        public void ChooseDino()
+        {
+            Console.WriteLine("Pick your opponent: Smallie, Mediumie, Largie");
+            string compinput = Console.ReadLine().ToLower();
+
+            switch (compinput)
+            {
+                case "smallie":
+                    CurrentDino = dinosaurs[0];
+                    break;
+                case "mediumie":
+                    CurrentDino = dinosaurs[1];
+                    break;
+                case "largie":
+                    CurrentDino = dinosaurs[2];
+                    break;
+                default:
+                    break;
+            }
+        }
 
     }
 }

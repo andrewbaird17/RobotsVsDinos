@@ -20,7 +20,7 @@ namespace DinosaursVsRobots
             herd = new Herd();
             fleet = new Fleet();
             // start a counter at 1 for mistyped choose robot
-            counter = 1;
+            //counter = 1;
         }
         // member methods (CAN DO)
 
@@ -32,59 +32,26 @@ namespace DinosaursVsRobots
             Console.WriteLine("The greatest minds have assembled and created the world's top line defense against these dinosaurs.");
             Console.WriteLine("You have been chosen to run this team of robots and are humanity's last hope. Good Luck!");
             Console.ReadLine();
-            ChooseRobot();
+            fleet.ChooseRobot();
+            herd.ChooseDino();
+            DisplayScreen();
         }
 
-        public void ChooseRobot()
-        {
-            // have user select their first robot to battle
-            Console.WriteLine("Choose Your Robot: Tiny, Normal, Big");
-            string userInput = Console.ReadLine().ToLower();
-            // clear console screen (reset the memory)
-            Console.Clear();
-            switch (userInput)
-            {
-                case "tiny":
-                    DisplayScreen(userInput);
-                    break;
-                case "normal":
-
-                    break;
-                case "big":
-
-                    break;
-                default:
-                    MistypedChoice();
-                    break;
-            }
-        }
-        public void MistypedChoice()
-        {
-            // keep track of failed entries and end program if too many attempts
-            if (counter <= 3)
-            {
-                counter += 1;
-                ChooseRobot();
-            }
-            else
-            {
-                // Add in final game screen to end program
-                Console.WriteLine("You have failed humanity!\n Hit any key to EXIT");
-            }
-        }
-        public void DisplayScreen(string userInput)
+        public void DisplayScreen()
         {
             Console.Clear();
             // Display Computer's (Dinosaur's): Type, Health, Energy
-            Console.WriteLine("Computer Chose:");
-            Console.WriteLine("Current Health: ");
-            Console.WriteLine("Current Energy: ");
+
+            Console.WriteLine("Computer Chose: " + herd.CurrentDino.type);
+            Console.WriteLine("Current Health: " + herd.CurrentDino.health);
+            Console.WriteLine("Current Energy: " + herd.CurrentDino.energy);
             Console.WriteLine("");
 
             // Display User's Robot Choice: Name, Health, powerLevel
-            Console.WriteLine("You Chose: " + userInput);
-            Console.WriteLine("Current Health: ");
-            Console.WriteLine("Current Power Level: ");
+            Console.WriteLine("You Chose: " + fleet.CurrentFighter.name) ;
+            Console.WriteLine("Current Health: " + fleet.CurrentFighter.health);
+            Console.WriteLine("Current Power Level: " + fleet.CurrentFighter.powerLevel);
+            Console.ReadLine();
 
         }
     }
