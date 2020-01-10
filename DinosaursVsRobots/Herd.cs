@@ -30,18 +30,25 @@ namespace DinosaursVsRobots
         // member methods (CAN DO)
         public void ChooseDino()
         {
-            Console.WriteLine("Pick your opponent: Smallie, Mediumie, Largie");
-            string compinput = Console.ReadLine().ToLower();
+            // Make the computer randomly choose its dinosaur to fight
+            List<string> dinonames = new List<string>() {"Smallie", "Mediumie", "Largeie"};
+            Random random = new Random();
+            int index = random.Next(dinonames.Count);
+            
+            string compinput = dinonames[index].ToLower();
 
             switch (compinput)
             {
+                // "Smallie"
                 case "smallie":
                     CurrentDino = dinosaurs[0];
                     break;
+                // "Mediumie"
                 case "mediumie":
                     CurrentDino = dinosaurs[1];
                     break;
-                case "largie":
+                // "Largeie"
+                case "largeie":
                     CurrentDino = dinosaurs[2];
                     break;
                 default:
