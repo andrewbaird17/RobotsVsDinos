@@ -50,23 +50,26 @@ namespace DinosaursVsRobots
             Console.WriteLine("Current Attack Power: " + fleet.CurrentFighter.attackPower);
             Console.ReadLine();
 
+            TurnSequence();
         }
 
         public void PlayerChoice()
         {
-            Console.WriteLine(fleet.CurrentFighter.name + "attacks" + herd.CurrentDino.type);
+            Console.WriteLine(fleet.CurrentFighter.name + " attacks " + herd.CurrentDino.type);
             // Console.WriteLine("Choose an option: Attack or Dodge")
             string robotAttack = "Attack";
             switch (robotAttack)
             {
                 case "Attack":
-                    RoboAttackSequence();
+                    AttackDinoSequence();
+                    
                     break;
                 default:
                     Console.Clear();
                     DisplayScreen();
                     break;
             }
+            
         }
 
         public void ComputerChoice()
@@ -80,22 +83,35 @@ namespace DinosaursVsRobots
             switch (compinput)
             {
                 case "attack":
-                    DinoAttackSequence();
+                    AttackRobotSequence();
                     break;
                 default:
                     break;
             }
         }
-        public void DinoAttackSequence()
+
+        public void TurnSequence()
         {
-            
-            
+            do
+            {
+                PlayerChoice();
+                ComputerChoice();
+                DisplayScreen();
+                Console.ReadLine();
+                Console.Clear();
+            } while (fleet.CurrentFighter.health > 0 && herd.CurrentDino.health > 0);
+
+
+        }
+        
+        public void AttackDinoSequence()
+        {
+            fleet.CurrentFighter.health -= herd.CurrentDino.attackPower; 
         }
 
-        public void RoboAttackSequence()
+        public void AttackRobotSequence()
         {
-            
-
+            herd.CurrentDino.health -= fleet.CurrentFighter.attackPower;
         }
 
     }

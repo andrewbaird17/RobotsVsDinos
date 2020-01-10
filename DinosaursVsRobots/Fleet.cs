@@ -55,6 +55,7 @@ namespace DinosaursVsRobots
                     break;
             }
         }
+
         public void MistypedChoice()
         {
             // keep track of failed entries and end program if too many attempts
@@ -68,6 +69,10 @@ namespace DinosaursVsRobots
                 // Add in final game screen to end program
                 Console.WriteLine("You have failed humanity!\n Hit any key to EXIT");
             }
+
+            
         }
+        
     }
 }
+

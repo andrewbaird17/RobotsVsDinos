@@ -22,13 +22,9 @@ namespace DinosaursVsRobots
             this.health = health;
             this.powerLevel = powerLevel;
             weapon = "";
-            this.attackPower = attackPower; 
+            this.attackPower = attackPower;
         }
         // member methods (CAN DO)
-        public void AttackDino()
-        {
-            
-        }
-    }
+    }   
 }
 
