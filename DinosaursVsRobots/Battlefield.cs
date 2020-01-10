@@ -11,7 +11,6 @@ namespace DinosaursVsRobots
         // member variables (HAS A)
         public Herd herd;
         public Fleet fleet;
-        int counter;
 
         // constructor (SPAWNER)
         public Battlefield()
@@ -19,8 +18,6 @@ namespace DinosaursVsRobots
             // instantiate the overall "armies" for each side
             herd = new Herd();
             fleet = new Fleet();
-            // start a counter at 1 for mistyped choose robot
-            //counter = 1;
         }
         // member methods (CAN DO)
 

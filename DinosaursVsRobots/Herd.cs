@@ -17,6 +17,7 @@ namespace DinosaursVsRobots
 
         public List<Dinosaur> dinosaurs;
         public Dinosaur CurrentDino;
+
         // constructor (SPAWNER)
         public Herd()
         {
