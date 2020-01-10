@@ -50,7 +50,7 @@ namespace DinosaursVsRobots
             Console.WriteLine("Choose your robot: ");
             for (int k = 0; k < names.Count; k++)
             {
-                Console.Write(names[k] + ", ");
+                Console.Write(names[k] + " \n");
             }
 
             string userInput = Console.ReadLine().ToLower();
@@ -60,6 +60,7 @@ namespace DinosaursVsRobots
             switch (userInput)
             {
                 case "tiny":
+                    CurrentFighter = robots[0];
                     break;
                 case "normal":
                     CurrentFighter = robots[1];

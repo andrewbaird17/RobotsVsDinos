@@ -106,7 +106,7 @@ namespace DinosaursVsRobots
             }
             else if (fleet.CurrentFighter.health <= 0)
             {
-                Console.WriteLine(fleet.CurrentFighter.name + " has zero health. \nChoose a new robot.");
+                Console.WriteLine(fleet.CurrentFighter.name + " has zero health.");
                 fleet.ChooseRobot();
                 DisplayScreen();
             }
