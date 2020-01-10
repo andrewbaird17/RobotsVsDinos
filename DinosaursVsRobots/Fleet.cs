@@ -9,9 +9,10 @@ namespace DinosaursVsRobots
     class Fleet
     {
         // member variables (HAS A)
-        public Robot tiny;
-        public Robot normal;
-        public Robot big;
+        // below three lines from first attempt before instantiating each Dino into a list
+        //public Robot tiny;
+        //public Robot normal;
+        //public Robot big;
         public List<Robot> robots;
 
         // constructor (SPAWNER)
