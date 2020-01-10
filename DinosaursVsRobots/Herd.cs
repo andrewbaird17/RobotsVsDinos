@@ -14,6 +14,7 @@ namespace DinosaursVsRobots
         //public Dinosaur small;
         //public Dinosaur medium;
         //public Dinosaur large;
+
         public List<Dinosaur> dinosaurs;
         // constructor (SPAWNER)
         public Herd()

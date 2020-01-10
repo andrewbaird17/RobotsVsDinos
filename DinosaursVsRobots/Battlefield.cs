@@ -31,6 +31,7 @@ namespace DinosaursVsRobots
             Console.WriteLine("Dinosaurs have come back to life and are threatenting human existence.");
             Console.WriteLine("The greatest minds have assembled and created the world's top line defense against these dinosaurs.");
             Console.WriteLine("You have been chosen to run this team of robots and are humanity's last hope. Good Luck!");
+            Console.ReadLine();
             ChooseRobot();
         }
 
@@ -44,11 +45,13 @@ namespace DinosaursVsRobots
             switch (userInput)
             {
                 case "tiny":
-                    
+                    DisplayScreen(userInput);
                     break;
                 case "normal":
+
                     break;
                 case "big":
+
                     break;
                 default:
                     MistypedChoice();
@@ -69,11 +72,20 @@ namespace DinosaursVsRobots
                 Console.WriteLine("You have failed humanity!\n Hit any key to EXIT");
             }
         }
-        public void DisplayScree()
+        public void DisplayScreen(string userInput)
         {
+            Console.Clear();
             // Display Computer's (Dinosaur's): Type, Health, Energy
+            Console.WriteLine("Computer Chose:");
+            Console.WriteLine("Current Health: ");
+            Console.WriteLine("Current Energy: ");
+            Console.WriteLine("");
 
             // Display User's Robot Choice: Name, Health, powerLevel
+            Console.WriteLine("You Chose: " + userInput);
+            Console.WriteLine("Current Health: ");
+            Console.WriteLine("Current Power Level: ");
+
         }
     }
 }
