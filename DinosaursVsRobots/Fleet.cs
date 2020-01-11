@@ -37,7 +37,7 @@ namespace DinosaursVsRobots
             List<string> names = new List<string>();
             for (int i = 0; i < robots.Count; i++)
             {
-                if (robots[i].health == 0)
+                if (robots[i].health <= 0)
                 {
                     robots.RemoveAt(i);
                 }
@@ -46,7 +46,7 @@ namespace DinosaursVsRobots
             {
                 names.Add(robots[j].name);
             }
-            // have user select their first robot to battle
+            // have user select their robot to battle
             Console.WriteLine("Choose your robot: ");
             for (int k = 0; k < names.Count; k++)
             {
@@ -54,23 +54,16 @@ namespace DinosaursVsRobots
             }
 
             string userInput = Console.ReadLine().ToLower();
+
             // clear console screen (reset the memory)
             Console.Clear();
-
-            switch (userInput)
+            // Find the name of the robot chosen in the list of robots that are still alive
+            foreach (var item in robots)
             {
-                case "tiny":
-                    CurrentFighter = robots[0];
-                    break;
-                case "normal":
-                    CurrentFighter = robots[1];
-                    break;
-                case "big":
-                    CurrentFighter = robots[2];
-                    break;
-                default:
-                    MistypedChoice();
-                    break;
+                if (userInput == item.name.ToLower())
+                {
+                    CurrentFighter = item;
+                }
             }
         }
 

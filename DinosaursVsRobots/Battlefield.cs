@@ -48,7 +48,7 @@ namespace DinosaursVsRobots
             Console.WriteLine("");
 
             // Display User's Robot Choice: Name, Health, powerLevel
-            Console.WriteLine("You Chose: " + fleet.CurrentFighter.name) ;
+            Console.WriteLine("You Chose: " + fleet.CurrentFighter.name);
             Console.WriteLine("Current Health: " + fleet.CurrentFighter.health);
             Console.WriteLine("Current Attack Power: " + fleet.CurrentFighter.attackPower);
             Console.ReadLine();
@@ -66,14 +66,14 @@ namespace DinosaursVsRobots
             {
                 case "Attack":
                     AttackDinoSequence();
-                    
+
                     break;
                 default:
                     Console.Clear();
                     DisplayScreen();
                     break;
             }
-            
+
         }
 
         public void ComputerChoice()
@@ -110,19 +110,19 @@ namespace DinosaursVsRobots
                 fleet.ChooseRobot();
                 DisplayScreen();
             }
-            else if (herd.CurrentDino.health <= 0) 
+            else if (herd.CurrentDino.health <= 0)
             {
                 Console.WriteLine(herd.CurrentDino.type + " has zero health.");
                 herd.ChooseDino();
                 DisplayScreen();
             }
-            
+
 
         }
-        
+
         public void AttackDinoSequence()
         {
-            fleet.CurrentFighter.health -= herd.CurrentDino.attackPower; 
+            fleet.CurrentFighter.health -= herd.CurrentDino.attackPower;
         }
 
         public void AttackRobotSequence()

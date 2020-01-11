@@ -22,9 +22,6 @@ namespace DinosaursVsRobots
             this.attackPower = attackPower; 
         }
         // member methods (CAN DO)
-        public void AttackRobot()
-        {
-            
-        }
+        
     }
 }
