@@ -56,9 +56,9 @@ namespace DinosaursVsRobots
                 compInput = types[index].ToLower();
             }
 
-
             // clear console screen (reset the memory)
-            Console.Clear();
+            //Console.Clear();
+
             // Find the name of the robot chosen in the list of robots that are still alive and send it out to fight
             foreach (var item in dinosaurs)
             {
@@ -67,6 +67,7 @@ namespace DinosaursVsRobots
                     CurrentDino = item;
                 }
             }
+
             // Below comments are how the computer orginally chose its dino to fight
             ////Make the computer randomly choose its dinosaur to fight
             //List<string> dinonames = new List<string>() {"Smallie", "Mediumie", "Largeie"};

@@ -122,13 +122,10 @@ namespace DinosaursVsRobots
             }
             else if (herd.CurrentDino.health <= 0)
             {
-                Console.WriteLine(herd.CurrentDino.type + " has zero health.");
+                // Doesn't need to display below line if computer is choosing this team
+                //Console.WriteLine(herd.CurrentDino.type + " has zero health.");
                 herd.ChooseDino();
                 DisplayScreen();
-            }
-            else
-            {
-
             }
 
 
