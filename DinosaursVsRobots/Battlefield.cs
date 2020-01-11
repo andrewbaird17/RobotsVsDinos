@@ -34,7 +34,9 @@ namespace DinosaursVsRobots
             // computer chooses a robot
             herd.ChooseDino();
             // Display stats
+
             DisplayScreen();
+
         }
 
         public void DisplayScreen()
@@ -123,6 +125,10 @@ namespace DinosaursVsRobots
                 Console.WriteLine(herd.CurrentDino.type + " has zero health.");
                 herd.ChooseDino();
                 DisplayScreen();
+            }
+            else
+            {
+
             }
 
 

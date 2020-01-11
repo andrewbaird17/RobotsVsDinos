@@ -24,9 +24,9 @@ namespace DinosaursVsRobots
         {
             dinosaurs = new List<Dinosaur>();
             // instantiate dinosaur classes when herd is instantiated
-            dinosaurs.Add(new Dinosaur("Smallie", 100, 50, 25));
+            dinosaurs.Add(new Dinosaur("Smallie", 300, 50, 25));
             dinosaurs.Add(new Dinosaur("Mediumie", 200, 25, 50));
-            dinosaurs.Add(new Dinosaur("Largeie", 300, 30, 75));
+            dinosaurs.Add(new Dinosaur("Largeie", 100, 30, 75));
         }
         // member methods (CAN DO)
         public void ChooseDino()
