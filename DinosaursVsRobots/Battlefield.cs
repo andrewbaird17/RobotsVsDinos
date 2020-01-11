@@ -104,6 +104,14 @@ namespace DinosaursVsRobots
                 Console.ReadLine();
                 Console.Clear();
             }
+            else if (herd.dinosaurs.Count == 0)
+            {
+                WinnerMessage();
+            }
+            else if (fleet.robots.Count == 0)
+            {
+                LoserMessage();
+            }
             else if (fleet.CurrentFighter.health <= 0)
             {
                 Console.WriteLine(fleet.CurrentFighter.name + " has zero health.");
@@ -120,6 +128,20 @@ namespace DinosaursVsRobots
 
         }
 
+        public void WinnerMessage()
+        {
+            Console.WriteLine("You have successfully defeated the dinosaurs! Humanity can rest in peace for now...");
+            Console.ReadLine();
+            Console.WriteLine("Hit any key to Exit");
+            Console.ReadLine();
+        }
+
+        public void LoserMessage()
+        {
+            Console.WriteLine("All of your robots are dead. You have failed humanity! Hit any button to Exit");
+            Console.ReadLine();
+
+        }
         public void AttackDinoSequence()
         {
             fleet.CurrentFighter.health -= herd.CurrentDino.attackPower;

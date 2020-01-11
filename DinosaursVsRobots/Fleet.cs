@@ -82,6 +82,7 @@ namespace DinosaursVsRobots
             {
                 // Add in final game screen to end program
                 Console.WriteLine("You have failed humanity!\n Hit any key to EXIT");
+                Console.ReadLine();
             }
         }
         

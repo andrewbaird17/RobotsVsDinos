@@ -14,7 +14,7 @@ namespace DinosaursVsRobots
 
             // run story game
             sim.RunSim();
-            Console.ReadLine();
+            //Console.ReadLine();
 
         }
     }
