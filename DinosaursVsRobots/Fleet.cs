@@ -37,11 +37,14 @@ namespace DinosaursVsRobots
             List<string> names = new List<string>();
             for (int i = 0; i < robots.Count; i++)
             {
+                // remove robot from list if health is at or below 0
                 if (robots[i].health <= 0)
                 {
                     robots.RemoveAt(i);
                 }
+                
             }
+            // make a list of available robots to fight
             for (int j = 0; j < robots.Count; j++)
             {
                 names.Add(robots[j].name);
@@ -57,7 +60,7 @@ namespace DinosaursVsRobots
 
             // clear console screen (reset the memory)
             Console.Clear();
-            // Find the name of the robot chosen in the list of robots that are still alive
+            // Find the name of the robot chosen in the list of robots that are still alive and send it out to fight
             foreach (var item in robots)
             {
                 if (userInput == item.name.ToLower())
