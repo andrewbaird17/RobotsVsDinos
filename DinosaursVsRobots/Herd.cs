@@ -17,6 +17,7 @@ namespace DinosaursVsRobots
 
         public List<Dinosaur> dinosaurs;
         public Dinosaur CurrentDino;
+        public string compInput;
 
         // constructor (SPAWNER)
         public Herd()
@@ -30,31 +31,67 @@ namespace DinosaursVsRobots
         // member methods (CAN DO)
         public void ChooseDino()
         {
-            
-            //Make the computer randomly choose its dinosaur to fight
-            List<string> dinonames = new List<string>() {"Smallie", "Mediumie", "Largeie"};
-            Random random = new Random();
-            int index = random.Next(dinonames.Count);
-            
-            string compinput = dinonames[index];
-
-            switch (compinput)
+            List<string> types = new List<string>();
+            for (int i = 0; i < dinosaurs.Count; i++)
             {
-                // "Smallie"
-                case "Smallie":
-                    CurrentDino = dinosaurs[0];
-                    break;
-                // "Mediumie"
-                case "Mediumie":
-                    CurrentDino = dinosaurs[1];
-                    break;
-                // "Largeie"
-                case "Largeie":
-                    CurrentDino = dinosaurs[2];
-                    break;
-                default:
-                    break;
+                // remove robot from list if health is at or below 0
+                if (dinosaurs[i].health <= 0)
+                {
+                    dinosaurs.RemoveAt(i);
+                }
+
             }
+            // make a list of available robots to fight
+            for (int j = 0; j < dinosaurs.Count; j++)
+            {
+                types.Add(dinosaurs[j].type);
+            }
+            // have comp select their dino to battle
+            
+            for (int k = 0; k < types.Count; k++)
+            {
+                Random random = new Random();
+                int index = random.Next(types.Count);
+
+                compInput = types[index].ToLower();
+            }
+
+
+            // clear console screen (reset the memory)
+            Console.Clear();
+            // Find the name of the robot chosen in the list of robots that are still alive and send it out to fight
+            foreach (var item in dinosaurs)
+            {
+                if (compInput == item.type.ToLower())
+                {
+                    CurrentDino = item;
+                }
+            }
+            // Below comments are how the computer orginally chose its dino to fight
+            ////Make the computer randomly choose its dinosaur to fight
+            //List<string> dinonames = new List<string>() {"Smallie", "Mediumie", "Largeie"};
+            //Random random = new Random();
+            //int index = random.Next(dinonames.Count);
+
+            //string compinput = dinonames[index];
+
+            //switch (compinput)
+            //{
+            //    // "Smallie"
+            //    case "Smallie":
+            //        CurrentDino = dinosaurs[0];
+            //        break;
+            //    // "Mediumie"
+            //    case "Mediumie":
+            //        CurrentDino = dinosaurs[1];
+            //        break;
+            //    // "Largeie"
+            //    case "Largeie":
+            //        CurrentDino = dinosaurs[2];
+            //        break;
+            //    default:
+            //        break;
+            //}
         }
 
     }
