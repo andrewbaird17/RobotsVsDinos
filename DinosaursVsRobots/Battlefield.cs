@@ -40,22 +40,27 @@ namespace DinosaursVsRobots
         public void DisplayScreen()
         {
             Console.Clear();
-            // Display Computer's (Dinosaur's): Type, Health, Energy
-
-            Console.WriteLine("Computer Chose: " + herd.CurrentDino.type);
-            Console.WriteLine("Current Health: " + herd.CurrentDino.health);
-            Console.WriteLine("Current Attack Power: " + herd.CurrentDino.attackPower);
-            Console.WriteLine("");
-
-            // Display User's Robot Choice: Name, Health, powerLevel
-            Console.WriteLine("You Chose: " + fleet.CurrentFighter.name);
-            Console.WriteLine("Current Health: " + fleet.CurrentFighter.health);
-            Console.WriteLine("Current Attack Power: " + fleet.CurrentFighter.attackPower);
-            Console.ReadLine();
-
             // Inititate the Fight
-            if (herd.dinosaurs.Count > 0 && fleet.robots.Count > 0)
+            // Check if user took too many attempts at typing in a robot name
+            if (fleet.counter == 4)
             {
+                LoserMessage();
+                Console.ReadLine();
+            }
+            // keep turns going
+            else if (herd.dinosaurs.Count > 0 && fleet.robots.Count > 0)
+            {// Display Computer's (Dinosaur's): Type, Health, Energy
+                Console.WriteLine("Computer Chose: " + herd.CurrentDino.type);
+                Console.WriteLine("Current Health: " + herd.CurrentDino.health);
+                Console.WriteLine("Current Attack Power: " + herd.CurrentDino.attackPower);
+                Console.WriteLine("");
+
+
+                // Display User's Robot Choice: Name, Health, powerLevel
+                Console.WriteLine("You Chose: " + fleet.CurrentFighter.name);
+                Console.WriteLine("Current Health: " + fleet.CurrentFighter.health);
+                Console.WriteLine("Current Attack Power: " + fleet.CurrentFighter.attackPower);
+                Console.ReadLine();
                 TurnSequence();
             }
             else if (herd.dinosaurs.Count == 0)
@@ -68,6 +73,9 @@ namespace DinosaursVsRobots
                 LoserMessage();
                 Console.ReadLine();
             }
+
+
+
         }
 
 

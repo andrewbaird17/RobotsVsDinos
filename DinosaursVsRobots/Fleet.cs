@@ -66,10 +66,10 @@ namespace DinosaursVsRobots
                 {
                     CurrentFighter = item;
                 }
-                //else
-                //{
-                //    MistypedChoice();
-                //}
+                else
+                {
+                    MistypedChoice();
+                }
             }
         }
 
