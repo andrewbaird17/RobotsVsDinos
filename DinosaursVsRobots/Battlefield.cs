@@ -54,8 +54,22 @@ namespace DinosaursVsRobots
             Console.ReadLine();
 
             // Inititate the Fight
-            TurnSequence();
+            if (herd.dinosaurs.Count > 0 && fleet.robots.Count > 0)
+            {
+                TurnSequence();
+            }
+            else if (herd.dinosaurs.Count == 0)
+            {
+                WinnerMessage();
+                Console.ReadLine();
+            }
+            else if (fleet.robots.Count == 0)
+            {
+                LoserMessage();
+                Console.ReadLine();
+            }
         }
+
 
         public void PlayerChoice()
         {
@@ -101,17 +115,17 @@ namespace DinosaursVsRobots
                 PlayerChoice();
                 ComputerChoice();
                 DisplayScreen();
-                Console.ReadLine();
+                //Console.ReadLine();
                 Console.Clear();
             }
-            else if (herd.dinosaurs.Count == 0)
-            {
-                WinnerMessage();
-            }
-            else if (fleet.robots.Count == 0)
-            {
-                LoserMessage();
-            }
+            //else if (herd.dinosaurs.Count == 0)
+            //{
+            //    WinnerMessage();
+            //}
+            //else if (fleet.robots.Count == 0)
+            //{
+            //    LoserMessage();
+            //}
             else if (fleet.CurrentFighter.health <= 0)
             {
                 Console.WriteLine(fleet.CurrentFighter.name + " has zero health.");
