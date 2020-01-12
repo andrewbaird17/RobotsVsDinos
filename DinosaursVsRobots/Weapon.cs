@@ -10,11 +10,10 @@ namespace DinosaursVsRobots
     {
         // member variables (HAS A)
         
-
         // constructor (SPAWNER)
         public Weapon()
         {
-            List<string> weapons = new List<string>() { "Cannon", "Knife", "Sword", "Fist" };
+            List<string> weapon = new List<string>() { "Cannon", "Knife", "Sword", "Fist" };
         }
         // member variables (CAN DO)
 

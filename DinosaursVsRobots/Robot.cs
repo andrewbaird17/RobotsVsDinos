@@ -35,7 +35,7 @@ namespace DinosaursVsRobots
             Random random = new Random();
             int index = random.Next(weapons.Count);
 
-            randomWeapon = weapons[index];
+            string randomWeapon = weapons[index];
             // return random weapon 
             return randomWeapon;
         }
