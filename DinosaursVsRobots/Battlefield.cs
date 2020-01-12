@@ -34,9 +34,7 @@ namespace DinosaursVsRobots
             // computer chooses a robot
             herd.ChooseDino();
             // Display stats
-
             DisplayScreen();
-
         }
 
         public void DisplayScreen()
@@ -61,18 +59,18 @@ namespace DinosaursVsRobots
 
         public void PlayerChoice()
         {
-            Console.WriteLine(fleet.CurrentFighter.name + " attacks " + herd.CurrentDino.type);
+            Console.WriteLine(fleet.CurrentFighter.name + " attacks " + herd.CurrentDino.type + " with " + fleet.CurrentFighter.randomWeapon);
             // Console.WriteLine("Choose an option: Attack or Dodge")
+            Console.ReadLine();
             string robotAttack = "Attack";
             switch (robotAttack)
             {
                 case "Attack":
                     AttackDinoSequence();
-
                     break;
                 default:
-                    Console.Clear();
-                    DisplayScreen();
+                    //Console.Clear();
+                    //DisplayScreen();
                     break;
             }
 
@@ -127,8 +125,6 @@ namespace DinosaursVsRobots
                 herd.ChooseDino();
                 DisplayScreen();
             }
-
-
         }
 
         public void WinnerMessage()
@@ -136,13 +132,13 @@ namespace DinosaursVsRobots
             Console.WriteLine("You have successfully defeated the dinosaurs! Humanity can rest in peace for now...");
             Console.ReadLine();
             Console.WriteLine("Hit any key to Exit");
-            Console.ReadLine();
+            //Console.ReadLine();
         }
 
         public void LoserMessage()
         {
             Console.WriteLine("All of your robots are dead. You have failed humanity! Hit any button to Exit");
-            Console.ReadLine();
+            //Console.ReadLine();
 
         }
         public void AttackDinoSequence()

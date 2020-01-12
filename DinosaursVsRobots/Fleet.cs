@@ -25,9 +25,9 @@ namespace DinosaursVsRobots
             robots = new List<Robot>();
             counter = 1;
             // instantiate robot classes when Fleet is instantiated
-            robots.Add(new Robot("Tiny", 300, 50, 25));
-            robots.Add(new Robot("Normal", 200, 75, 50));
-            robots.Add(new Robot("Big", 100, 25, 75));
+            robots.Add(new Robot("Tiny", 500, 50, 55));
+            robots.Add(new Robot("Normal", 300, 75, 75));
+            robots.Add(new Robot("Big", 100, 25, 55));
         }
 
         // member methods (CAN DO)
@@ -42,7 +42,6 @@ namespace DinosaursVsRobots
                 {
                     robots.RemoveAt(i);
                 }
-                
             }
             // make a list of available robots to fight
             for (int j = 0; j < robots.Count; j++)
@@ -57,9 +56,9 @@ namespace DinosaursVsRobots
             }
 
             string userInput = Console.ReadLine().ToLower();
-
             // clear console screen (reset the memory)
             Console.Clear();
+
             // Find the name of the robot chosen in the list of robots that are still alive and send it out to fight
             foreach (var item in robots)
             {
